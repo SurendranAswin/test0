@@ -1,0 +1,330 @@
+if(Autophase == 1)
+		{
+			switch(hall_sensor)
+			{
+				  case 1:  // A8,B15
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								TIM1->CCR2 = 0;	TIM1->CCR3 = 0;
+								TIM1->CCR1 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,1);
+								break;
+				 case 2: // A9,B13
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);						 
+								TIM1->CCR1 = 0;TIM1->CCR3 = 0;
+								TIM1->CCR2 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
+								break;
+				 case 3: //A9,B15
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);							 
+								TIM1->CCR1 = 0;TIM1->CCR3 = 0;
+								TIM1->CCR2 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,1);						 
+								break;
+				 case 4: //A10,B14
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);								 
+								TIM1->CCR1 = 0;TIM1->CCR2 = 0; 
+								TIM1->CCR3 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,1);	
+								break;
+				 case 5: //A8,B14
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);	
+								TIM1->CCR2 = 0;TIM1->CCR3 = 0;
+								TIM1->CCR1 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,1);	
+								break;
+				 case 6: //A10,B13
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);	
+								TIM1->CCR1 = 0;TIM1->CCR2 = 0;	
+								TIM1->CCR3 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);	
+								break;		
+				default :			          
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);
+								TIM1->CCR1 = 0;	
+								TIM1->CCR2 = 0;	
+								TIM1->CCR3 = 0;
+			}
+		}
+		else if(Autophase == 2)
+		{
+			switch(hall_sensor)
+			{
+				case 1:  // A8,B15
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);
+								TIM1->CCR2 = 0;	TIM1->CCR3 = 0;
+								TIM1->CCR1 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,1);
+								break;
+				 case 2: // A9,B13
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);						 
+								TIM1->CCR1 = 0;TIM1->CCR2 = 0;
+								TIM1->CCR3 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
+								break;
+				 case 3: //A9,B15
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);							 
+								TIM1->CCR1 = 0;TIM1->CCR2 = 0;
+								TIM1->CCR3 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,1);						 
+								break;
+				 case 4: //A10,B14
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);								 
+								TIM1->CCR1 = 0;TIM1->CCR3 = 0; 
+								TIM1->CCR2 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,1);	
+								break;
+				 case 5: //A8,B14
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);	
+								TIM1->CCR2 = 0;TIM1->CCR3 = 0;
+								TIM1->CCR1 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,1);	
+								break;
+				 case 6: //A10,B13
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);	
+								TIM1->CCR1 = 0;TIM1->CCR3 = 0;	
+								TIM1->CCR2 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);	
+								break;		
+				default :			          
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);
+								TIM1->CCR1 = 0;	
+								TIM1->CCR2 = 0;	
+								TIM1->CCR3 = 0;
+			}
+		}
+		else if(Autophase == 3)
+		{
+			switch(hall_sensor)
+			{
+				case 1:  // A8,B15
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								TIM1->CCR1 = 0;	TIM1->CCR3 = 0;
+								TIM1->CCR2 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,1);
+								break;
+				 case 2: // A9,B13
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);						 
+								TIM1->CCR2 = 0;TIM1->CCR3 = 0;
+								TIM1->CCR1 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,1);
+								break;
+				 case 3: //A9,B15
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);							 
+								TIM1->CCR2 = 0;TIM1->CCR3 = 0;
+								TIM1->CCR1 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,1);						 
+								break;
+				 case 4: //A10,B14
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);								 
+								TIM1->CCR1 = 0;TIM1->CCR2 = 0; 
+								TIM1->CCR3 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);	
+								break;
+				 case 5: //A8,B14
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);	
+								TIM1->CCR1 = 0;TIM1->CCR3 = 0;
+								TIM1->CCR2 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);	
+								break;
+				 case 6: //A10,B13
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);	
+								TIM1->CCR1 = 0;TIM1->CCR2 = 0;	
+								TIM1->CCR3 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,1);	
+								break;		
+				default :			          
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);
+								TIM1->CCR1 = 0;	
+								TIM1->CCR2 = 0;	
+								TIM1->CCR3 = 0;
+			}
+		}
+		else if(Autophase == 4)
+		{
+			switch(hall_sensor)
+			{
+				case 1:  // A8,B15
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);
+								TIM1->CCR1 = 0;	TIM1->CCR2 = 0;
+								TIM1->CCR3 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,1);
+								break;
+				 case 2: // A9,B13
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);						 
+								TIM1->CCR2 = 0;TIM1->CCR3 = 0;
+								TIM1->CCR1 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
+								break;
+				 case 3: //A9,B15
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);							 
+								TIM1->CCR2 = 0;TIM1->CCR3 = 0;
+								TIM1->CCR1 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,1);						 
+								break;
+				 case 4: //A10,B14
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);								 
+								TIM1->CCR1 = 0;TIM1->CCR3 = 0; 
+								TIM1->CCR2 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);	
+								break;
+				 case 5: //A8,B14
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);	
+								TIM1->CCR1 = 0;TIM1->CCR2 = 0;
+								TIM1->CCR3 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);	
+								break;
+				 case 6: //A10,B13
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);	
+								TIM1->CCR1 = 0;TIM1->CCR3 = 0;	
+								TIM1->CCR2 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,1);	
+								break;		
+				default :			          
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);
+								TIM1->CCR1 = 0;	
+								TIM1->CCR2 = 0;	
+								TIM1->CCR3 = 0;
+			}
+		}
+		else if(Autophase == 5)
+		{
+			switch(hall_sensor)
+			{
+				case 1:  // A8,B15
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);
+								TIM1->CCR1 = 0;	TIM1->CCR3 = 0;
+								TIM1->CCR2 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
+								break;
+				 case 2: // A9,B13
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);						 
+								TIM1->CCR1 = 0;TIM1->CCR2 = 0;
+								TIM1->CCR3 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,1);
+								break;
+				 case 3: //A9,B15
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);							 
+								TIM1->CCR1 = 0;TIM1->CCR2 = 0;
+								TIM1->CCR3 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);						 
+								break;
+				 case 4: //A10,B14
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);								 
+								TIM1->CCR2 = 0;TIM1->CCR3 = 0; 
+								TIM1->CCR1 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,1);	
+								break;
+				 case 5: //A8,B14
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);	
+								TIM1->CCR1 = 0;TIM1->CCR3 = 0;
+								TIM1->CCR2 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,1);	
+								break;
+				 case 6: //A10,B13
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);	
+								TIM1->CCR2 = 0;TIM1->CCR3 = 0;	
+								TIM1->CCR1 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,1);	
+								break;		
+				default :			          
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);
+								TIM1->CCR1 = 0;	
+								TIM1->CCR2 = 0;	
+								TIM1->CCR3 = 0;
+			}
+		}
+		else if(Autophase == 6)
+		{
+			switch(hall_sensor)
+			{
+				case 1:  // A8,B15
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);
+								TIM1->CCR1 = 0;	TIM1->CCR2 = 0;
+								TIM1->CCR3 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
+								break;
+				 case 2: // A9,B13
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);						 
+								TIM1->CCR1 = 0;TIM1->CCR3 = 0;
+								TIM1->CCR2 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,1);
+								break;
+				 case 3: //A9,B15
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);							 
+								TIM1->CCR1 = 0;TIM1->CCR3 = 0;
+								TIM1->CCR2 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);						 
+								break;
+				 case 4: //A10,B14
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);								 
+								TIM1->CCR2 = 0;TIM1->CCR3 = 0; 
+								TIM1->CCR1 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,1);	
+								break;
+				 case 5: //A8,B14
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);	
+								TIM1->CCR1 = 0;TIM1->CCR2 = 0;
+								TIM1->CCR3 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,1);	
+								break;
+				 case 6: //A10,B13
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);	
+								TIM1->CCR2 = 0;TIM1->CCR3 = 0;	
+								TIM1->CCR1 = power;
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,1);	
+								break;		
+				default :			          
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,0);
+								HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,0);
+								TIM1->CCR1 = 0;	
+								TIM1->CCR2 = 0;	
+								TIM1->CCR3 = 0;
+			}
+		}

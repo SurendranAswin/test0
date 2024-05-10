@@ -1,4 +1,4 @@
-if(Autophase == 1)
+if(Autophase == 1) 
 		{
 			switch(hall_sensor)
 			{
